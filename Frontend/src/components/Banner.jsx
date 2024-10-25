@@ -1,13 +1,14 @@
 import React from 'react'
 import banner from '../../public/Banner.jpg'
+import { Link } from 'react-router-dom'
 function Banner() {
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row  my-10">
       <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32" >
        <div className="space-y-10">
-       <h1 className="text-4xl font-bold ">Hello. Welcome to <span className='text-pink-500'>gyan ki pathshala!!</span> </h1>
-       <p className='text-xl'>Aajo aajo bcho ...kitabe lelo ,,ias wias bno ,desh ka nam roshan kro,tumhe to reels pr bhi nachna ni ata </p>
+       <h1 className="text-5xl font-bold ">Hi , Welcome to <span className='text-pink-500'>Gyaan ki pathshala!!</span> </h1>
+       <p className='text-xl font-bold'>Discover your next great read, where every book opens a world of endless possibilities. <span className='text-pink-500'> Explore, imagine, and dive </span>  into stories that inspire! </p>
 
        <label className="input input-bordered flex items-center gap-2">
   <svg
@@ -24,7 +25,7 @@ function Banner() {
 </label>
        </div>
        
-       <button className="btn mt-6 btn-secondary">Secondary</button>
+       <button className="btn mt-6 btn-secondary"> <Link to='/signup'> Let's Start  </Link></button>
 
       </div>
        <div className="w-full order-1 md:w-1/2">

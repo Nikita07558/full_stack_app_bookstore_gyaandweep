@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect ,useState } from 'react'
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import list from "../../public/list.json";
+
 import Cards from './Cards';
+
+import axios from "axios";
 function Freebook() {
-const filterData = list.filter((data) => data.category === "free" );
+  const [book,setBook] = useState([]);
+  useEffect(()=>{
+    const getBook = async () => {
+      try {
+        const res = await axios.get("http://localhost:4001/book");
+        console.log(res.data);
+        const data=res.data.filter((data) => data.category === "free" );
+        setBook(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
+
+
 var settings = {
   dots: true,
   infinite: false,
@@ -45,12 +63,12 @@ var settings = {
 
     <div  className="max-w-screen-2xl container mx-auto md:px-20 px-4">
       <div>
-      <h1 className='font-semibold text-xl pb-2'>Free Offered Courses </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam facere praesentium, laborum deserunt debitis animi commodi vitae, officia, hic et ex explicabo enim sint eaque. Molestias, nulla. Corporis, fuga est?</p>
+      <h1 className='font-semibold text-xl pb-2'>Free Offered Books Collection </h1>
+      <p>"We are excited to offer you a selection of free books that you can download and enjoy at no cost. Whether you're looking to learn something new or simply escape into a good story, these books are available for you with no strings attached. <span className='text-green-600'> No cost, just learning!"" </span></p>
     </div>
     <div>
     <Slider {...settings}>
-       {filterData.map((item)=>(
+       {book.map((item)=>(
       <Cards item={item} key={item.id}/>
        ))}
       </Slider>
