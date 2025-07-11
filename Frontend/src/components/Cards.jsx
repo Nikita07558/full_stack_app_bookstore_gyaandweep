@@ -5,7 +5,7 @@ function Cards({ item, showFullDescriptionButton }) {
 
   return (
     <div className="mt-4 my-3 p-3">
-      <div className="card bg-base-100 w-92 shadow-xl hover:scale-105 duration-200 dark:bg-slate-850 dark:text-white">
+      <div className="card bg-base-100 w-92 shadow-xl hover:scale-105 duration-200 dark:bg-slate-800 dark:text-white">
         <figure>
           <img
             src={item.thumbnail || "https://pngimg.com/d/book_PNG2111.png"}
