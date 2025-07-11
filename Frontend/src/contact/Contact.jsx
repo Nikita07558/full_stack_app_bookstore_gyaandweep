@@ -25,7 +25,7 @@ function Contact() {
           </p>
           
           <p>
-            <strong>Phone:</strong> 7717381601
+            <strong>Phone:</strong> 7717381611
           </p>
          
           <p>
