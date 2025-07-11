@@ -22,7 +22,7 @@ function Login() {
     };
 
     try {
-      const res = await axios.post("http://localhost:4001/user/login", userInfo);
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, userInfo);
       if (res.data?.user) {
         toast.success("Logged in Successfully");
         localStorage.setItem("Users", JSON.stringify(res.data.user));
