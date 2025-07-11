@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import banner from '../../public/Banner2.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
 import toast from 'react-hot-toast';
@@ -63,7 +62,7 @@ function Banner() {
         </div>
 
         <div className="w-full order-1 md:w-1/2">
-          <img src={banner} className="px-10 w-170 h-55" alt="" />
+          <img src="/Banner2.jpg" className="px-10 w-170 h-55" alt="Banner" />
         </div>
       </div>
     </>
